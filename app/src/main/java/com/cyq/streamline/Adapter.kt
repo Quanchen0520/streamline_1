@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class Adapter(
-    private val itemList: List<String>,
-    private val musicList: List<Int>
+    private val nameList: List<String>,
+    private val musicList: List<Int>,
+    private val imageList: List<Int>
 ) : RecyclerView.Adapter<Adapter.ViewHolder>() {
     private val mediaPlayerMap = mutableMapOf<Int, MediaPlayer?>()
     private val isPlayingMap = mutableMapOf<Int, Boolean>()
@@ -19,6 +21,7 @@ class Adapter(
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.textView)
         val playBtn: ImageButton = itemView.findViewById(R.id.imageButton2)
+        val imageView: ImageView = itemView.findViewById(R.id.imageView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,10 +30,11 @@ class Adapter(
         )
     }
 
-    override fun getItemCount(): Int = itemList.size
+    override fun getItemCount(): Int = nameList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textView.text = itemList[position]
+        holder.textView.text = nameList[position]
+        holder.imageView.setImageResource(imageList[position])
         if (!mediaPlayerMap.containsKey(position)) {
             mediaPlayerMap[position] =
                 MediaPlayer.create(holder.itemView.context, musicList[position])

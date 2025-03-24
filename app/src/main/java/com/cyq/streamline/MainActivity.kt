@@ -19,9 +19,16 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         val viewpager = findViewById<ViewPager2>(R.id.viewpager)
-        val itemList = listOf("AAA", "BBB", "CCC", "DDD")
+        val nameList = listOf("ocean_wave", "brook", "glassland", "rain_thunder")
+        val imageList = listOf(
+            R.drawable.ocean_wave,
+            R.drawable.brook,
+            R.drawable.glassland,
+            R.drawable.rain_thunder
+        )
         val musicList = listOf(R.raw.ocean_wave, R.raw.brook, R.raw.glassland, R.raw.rain_thunder)
-        adapter = Adapter(itemList, musicList)
+
+        adapter = Adapter(nameList, musicList, imageList)
         viewpager.adapter = adapter
     }
 
