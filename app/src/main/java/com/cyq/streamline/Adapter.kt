@@ -19,9 +19,9 @@ class Adapter(
     private val isPlayingMap = mutableMapOf<Int, Boolean>()
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textView: TextView = itemView.findViewById(R.id.textView)
-        val playBtn: ImageButton = itemView.findViewById(R.id.imageButton2)
-        val imageView: ImageView = itemView.findViewById(R.id.imageView)
+        val textView: TextView = itemView.findViewById(R.id.musicName)
+        val playBtn: ImageButton = itemView.findViewById(R.id.playBtn)
+        val imageView: ImageView = itemView.findViewById(R.id.musicImage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

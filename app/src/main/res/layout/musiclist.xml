@@ -6,34 +6,34 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/musicName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/playBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/musicName"
+        app:layout_constraintStart_toStartOf="@+id/musicName"
+        app:layout_constraintTop_toBottomOf="@+id/musicName"
         app:srcCompat="@drawable/baseline_play_arrow_24" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/musicImage"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
         android:layout_margin="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton2"
-        app:layout_constraintStart_toStartOf="@+id/imageButton2"
+        app:layout_constraintBottom_toTopOf="@+id/musicName"
+        app:layout_constraintEnd_toEndOf="@+id/playBtn"
+        app:layout_constraintStart_toStartOf="@+id/playBtn"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>
